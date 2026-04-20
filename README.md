@@ -10,7 +10,7 @@ The objectives for today are:
 - Get a handle on publishing Docker images
 
 ## Pre-flight checks
-We're working with Docker today, and we can do this either inside the dev machine you normally use (if you have Docker installed and working), but we can also use an ACG cloud server. 
+We're working with Docker today, and we can do this either inside the dev machine you normally use (if you have Docker installed and working), but Docker is available on GitHub Codespaces or a Pluralsight cloud server. 
 
 You will have already checked as part of an earlier module that you can operate Docker in one of these environments.
 
@@ -21,7 +21,7 @@ $ docker --version
 
 You should get a response similar to the following:
 ```
-Docker version 24.0.7, build afdd53b4e3
+Docker version 28.5.1-1, build e180ab8ab82d22b7895a3e6e110cf6dd5c45f1d7
 ```
 
 You will also need to create an account on Docker Hub, which you can do [here](https://hub.docker.com/signup).
@@ -182,7 +182,7 @@ $ docker push <your_username>/hello-world:1.0
 
 ## Part 4: Dockerise Chimera
 
-> :warning: **M1 Mac users** The cliapp is built for x86-64. To run it on an ARM machine pass `--platform linux/amd64` to the docker build command. Or, you can use an x86-64 machine such as the VMs available via ACG.
+> :warning: **M1 Mac users** The cliapp is built for x86-64. To run it on an ARM machine pass `--platform linux/amd64` to the docker build command. Or, you can use an x86-64 machine such as the VMs available via Pluralsight or by setting up a GitHub Codespace.
 
 Now for something more complicated. In the Unit 6 Workshop we worked with a legacy application called the Chimera Reporting Server. In the remainder of this exercise we are going to convert that application to using Docker. This process is sometimes called "dockerising" or "containerising" an application.
 
