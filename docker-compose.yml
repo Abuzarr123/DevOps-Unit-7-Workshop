@@ -6,17 +6,22 @@ services:
     build:
       context: dockerfiles/
       dockerfile: Dockerfile.cliapp
-    volumes:
-      - data:/opt/chimera/data
+
+    environment:
+        - REDIS_HOST=redis
+        - REDIS_PORT=6379
   webapp:
     build: 
       context: dockerfiles/
       dockerfile: Dockerfile.webapp
-    volumes:
-      - data:/opt/chimera/data
     ports:
       - 8080:80
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379    
+    
+  redis:
+    image: redis:7-alpine
 
-volumes:
-  data:
+
   
